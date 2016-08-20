@@ -1,0 +1,11 @@
+monitors:
+    msp_less_zero:
+        rule: evnt.minSalePrice||LT-0
+        alert: email
+        
+        
+profiles:        
+	email:
+        to: evnt.minSalePrice||LT-0
+        subject: ERROR
+        template: error.vm
