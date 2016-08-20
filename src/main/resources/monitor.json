@@ -1,0 +1,16 @@
+[
+  {
+    "name": "msp_less_zero",
+    "event":"products",
+    "rule": "minSalePrice::gt::10",
+    "interval":"60s",
+    "alert": "email"
+    },
+  {
+    "name": "msp_less_mlp",
+    "event":"products",
+    "rule": "minSalePrice::lt::minListPrice",
+    "interval":"60s",
+    "alert": "email"
+  }
+]
