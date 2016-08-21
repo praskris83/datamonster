@@ -40,7 +40,7 @@ public class Watcher {
 
 	static RestClient restClient = null;
 
-	@PostConstruct
+//	@PostConstruct
 	public void init() {
 		System.out.println(clusterName + " -- " + clusterUrl);
 		Header[] defaultHeaders = new BasicHeader[1];

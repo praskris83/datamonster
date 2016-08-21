@@ -56,12 +56,14 @@ public class Application {
 //        KafkaElasticSink kafkaElasticSink = new KafkaElasticSink(zooKeeper, groupId, topic, threads);
         kafkaElasticSink.run(kafkaElasticSink.getNoOfThreads());
 
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException ie) {
-            ie.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException ie) {
+//            ie.printStackTrace();
+//        }
 
-        kafkaElasticSink.shutdown();
+        while (true) {
+            //continuously run
+        }
     }
 }

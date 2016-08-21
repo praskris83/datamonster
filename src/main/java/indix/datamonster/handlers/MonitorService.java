@@ -36,7 +36,7 @@ public class MonitorService {
 	@Autowired
 	private Watcher watcher;
 	
-	@PostConstruct
+//	@PostConstruct
 	public void init() {
 		loadMonitors();
 	}
