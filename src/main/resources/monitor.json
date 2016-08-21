@@ -1,16 +1,24 @@
 [
-  {
-    "name": "msp_less_zero",
-    "event":"products",
-    "rule": "minSalePrice::gt::10",
-    "interval":"60s",
-    "alert": "email"
-    },
-  {
-    "name": "msp_less_mlp",
-    "event":"products",
-    "rule": "minSalePrice::lt::minListPrice",
-    "interval":"60s",
-    "alert": "email"
-  }
+   {
+      "name":"msp_less_one",
+      "event":"products",
+      "rules":[
+         {
+            "rule":"products.minSalePrice::gt::10"
+         },
+         {
+            "rule":"products.availability::eq::IN_STOCK"
+         },
+         {
+            "rule":"products.countryCode::eq::US"
+         },
+         {
+            "rule":"products.storeId::eq::220"
+         }
+      ],
+      "alert":"email",
+      "alertTo":"email",
+      "message":"email",
+      "interval":"60s"
+   }
 ]

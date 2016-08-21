@@ -67,8 +67,10 @@ public class MonitorService {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public List<Monitor> add(@RequestBody Monitor monitor) {
-		allMonitorts.add(monitor);
-		watcher.registerWatcher(monitor);
+		if(! allMonitorts.contains(monitor)){
+			allMonitorts.add(monitor);
+			watcher.registerWatcher(monitor);
+		}
 		return allMonitorts;
 	}
 }
