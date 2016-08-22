@@ -32,10 +32,10 @@ import indix.datamonster.bo.Rule;
 public class Watcher {
 
 	@Value("${datamonitor.es.clustername}")
-	String clusterName = "82a5c9dc304ca43e36e011674d860e61";
+	String clusterName = "86106386ef1d4352afecbfbe330f2227";
 
 	@Value("${datamonitor.es.host}")
-	String clusterUrl = "82a5c9dc304ca43e36e011674d860e61.us-east-1.aws.found.io";
+	String clusterUrl = "86106386ef1d4352afecbfbe330f2227.us-east-1.aws.found.io";
 
 	static RestClient restClient = null;
 
@@ -60,7 +60,7 @@ public class Watcher {
 		String query = buildRuleMap(rules);
 		String req = WatcherRequestBuilder.getQueryReq(query, monitor);
 		System.out.println("Adding Watcher == " + req);
-//		addWatcher(req, monitor.getName());
+		addWatcher(req, monitor.getName());
 
 //		Map<String, String> ruleMap = buildRuleMap(rules);
 //		if (ruleMap != null) {

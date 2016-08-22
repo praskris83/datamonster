@@ -44,12 +44,22 @@ public class WatcherRequestBuilder {
 			"                              \"cutoff\":1500\r\n" + 
 			"                           }\r\n" + 
 			"                        }\r\n" + 
-			"                     },\r\n" + 
+			"                     },\r\n" +
 			"                     \"query\":{\r\n" + 
-			"                        \"match_all\":{\r\n" + 
-			"\r\n" + 
+			"                        \"range\":{\r\n" + 
+			"                           \"_timestamp\":{\r\n" + 
+			"                              \"gt\":\"now-"
+//			+ "${interval}"
+			+ "3m"
+			+ "\"\r\n" + 
+			"                           }\r\n" + 
 			"                        }\r\n" + 
-			"                     }\r\n" + 
+			"                     }"+
+//			"                     \"query\":{\r\n" + 
+//			"                        \"match_all\":{\r\n" + 
+//			"\r\n" + 
+//			"                        }\r\n" + 
+//			"                     }\r\n" + 
 			"                  }\r\n" + 
 			"               }\r\n" + 
 			"            }\r\n" + 

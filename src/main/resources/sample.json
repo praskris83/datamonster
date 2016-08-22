@@ -1,0 +1,33 @@
+
+   {
+      "name":"multi_rules",
+      "event":"products",
+      "rules":[
+         {
+            "rule":"products.availability::eq::IN_STOCK"
+         },
+         {
+            "rule":"products.storeId::eq::220"
+         }
+      ],
+      "alert":"email",
+      "alertTo":"praskris83@gmail.com",
+      "message":"Min sale Price is less than Min List Price for Store Id 220",
+      "interval":"1m"
+   },
+   {
+      "name":"msp_gt_ten",
+      "event":"products",
+      "rules":[
+         {
+            "rule":"products.minSalePrice::gt::10"
+         },
+         {
+            "rule":"products.storeId::eq::220"
+         }
+      ],
+      "alert":"email",
+      "alertTo":"praskris83@gmail.com",
+      "message":"Min Sale Price is GT 10",
+      "interval":"1m"
+   }

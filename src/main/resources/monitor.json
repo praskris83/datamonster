@@ -1,24 +1,41 @@
 [
-   {
-      "name":"msp_less_one",
+	{
+      "name":"sid_lt_zero",
       "event":"products",
       "rules":[
          {
-            "rule":"products.minSalePrice::gt::10"
-         },
-         {
-            "rule":"products.availability::eq::IN_STOCK"
-         },
-         {
-            "rule":"products.countryCode::eq::US"
-         },
-         {
-            "rule":"products.storeId::eq::220"
+            "rule":"products.storeId::lte::0"
          }
       ],
       "alert":"email",
-      "alertTo":"email",
-      "message":"email",
-      "interval":"60s"
+      "alertTo":"praskris83@gmail.com",
+      "message":"Invalid Store ID Found",
+      "interval":"1m"
+   },
+	{
+      "name":"msp_lt_zero",
+      "event":"products",
+      "rules":[
+         {
+            "rule":"products.minSalePrice::lte::0"
+         }
+      ],
+      "alert":"email",
+      "alertTo":"praskris83@gmail.com",
+      "message":"Min Sale Price is Less then 0",
+      "interval":"1m"
+   },
+   {
+      "name":"msp_less_mlp",
+      "event":"products",
+      "rules":[
+         {
+            "rule":"products.minSalePrice::lt::products.minListPrice"
+         }
+      ],
+      "alert":"email",
+      "alertTo":"praskris83@gmail.com",
+      "message":"Min sale Price is less than Min List Price",
+      "interval":"1m"
    }
 ]

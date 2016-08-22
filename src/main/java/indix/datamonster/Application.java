@@ -1,19 +1,13 @@
 package indix.datamonster;
 
-import indix.datamonster.kafka.KafkaElasticSink;
-import io.searchbox.client.JestClient;
-import io.searchbox.client.JestClientFactory;
-import io.searchbox.client.config.HttpClientConfig;
-import io.searchbox.core.Index;
-import io.searchbox.core.Search;
-import io.searchbox.core.SearchResult;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.io.IOException;
-import java.util.UUID;
+import indix.datamonster.kafka.KafkaElasticSink;
 
 /**
  * @author prasad
@@ -43,7 +37,7 @@ public class Application {
 //        client.execute(index);
 
         final Application application = ctx.getBean(Application.class);
-        application.execute();
+//        application.execute();
 
     }
 
